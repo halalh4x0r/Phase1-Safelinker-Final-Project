@@ -1,0 +1,34 @@
+{
+  "urls": [
+    {
+      "id": 1,
+      "url": "http://freemoney.biz",
+      "threatType": "Phishing",
+      "reported": true
+    },
+    {
+      "id": 2,
+      "url": "http://login-breach.com",
+      "threatType": "Credential Theft",
+      "reported": true
+    },
+    {
+      "id": 3,
+      "url": "http://secure-bank.xyz",
+      "threatType": "Scam",
+      "reported": true
+    },
+    {
+      "id": 4,
+      "url": "http://coolgames.fun",
+      "threatType": "Clean",
+      "reported": false
+    },
+    {
+      "id": 5,
+      "url": "http://amazingoffer.click",
+      "threatType": "Adware",
+      "reported": true
+    }
+  ]
+}

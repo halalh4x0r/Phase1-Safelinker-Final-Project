@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="safelinker.css" />
+    <title>Safelinker</title>
+</head>
+<body>
+    <div class="container">
+    <h1>SafeLinker</h1>
+    <p>Scan URLs for safety before clicking them.</p>
+    <input type="text" id="urlInput" placeholder="Paste a link here..." />
+    <button id="scanButton">Scan URL</button>
+    <div id="result" class="hidden"></div>
+    <h2>Scan History</h2>
+    <ul id="historyList"></ul>
+    <h2>Learn to Spot Suspicious Links</h2>
+    <div class="education">
+      <ul>
+        <li>Avoid links with strange or misspelled domains.</li>
+        <li>Hover to preview where the link actually goes.</li>
+        <li>Don't trust links from unknown sources.</li>
+        <li>Shortened links? Use a preview tool before clicking.</li>
+      </ul>
+    </div>
+  </div>
+  <script src="safelinker.js"></script>
+</body>
+</html>
