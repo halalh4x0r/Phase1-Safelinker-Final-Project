@@ -27,7 +27,7 @@ To run Safelinker locally, you need:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/safelinker.git
+   git clone https://github.com/halalh4x0r/safelinker.git
    cd safelinker
 Open index.html in your browser or use Live Server in VS Code.
 
