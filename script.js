@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function checkURLAgainstLocalDB(url) {
     try {
-      const res = await fetch(`http://localhost:3000/urls`);
+      const res = await fetch('https://phase1-safelinker-final-project.onrender.com/urls');
       const data = await res.json();
       const match = data.find(entry => entry.url === url);
       if (match) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const { status, type } = await checkURLAgainstLocalDB(url);
 
     if (status === 'error') {
-      resultDiv.textContent = '⚠️ Something went wrong while checking the URL.';
+      resultDiv.textContent = 'Something went wrong while checking the URL.';
       resultDiv.className = '';
       return;
     }
