@@ -1,31 +1,46 @@
-<link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <div id="loading" style="display: none;">Scanning... 🔍 Please wait</div>
-<script src="script.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SafeLinker</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
   <div class="container">
-    <h1>SafeLinker</h1>
+    <h1> SafeLinker</h1>
     <p>Scan URLs for safety before clicking them!</p>
-    <input type="text" id="urlInput" placeholder="Paste a link here...">
+
+    <input type="text" id="urlInput" placeholder="Paste a link here..." />
     <button id="scanButton">Scan URL</button>
+
+    
+    <div id="loading" style="display: none;">
+      <div class="spinner"></div>
+      <p>Scanning... 🔍 Please wait</p>
+    </div>
+
+    
     <div id="result" class="hidden"></div>
+    <div id="scanOutput" style="display: none;"></div>
+
+    
     <h2>Scan History</h2>
     <ul id="historyList"></ul>
-    <h2>Learn to Spot Suspicious Links</h2>
-    <div id="result">
-  <div id="loading" style="display: none;">
-    <div class="spinner"></div>
-    <p>Scanning...</p>
-  </div>
-  <div id="scanOutput" style="display: none;"></div>
-</div>
 
+    
+    <h2>Learn to Spot Suspicious Links</h2>
     <div class="education">
       <ul>
-        <li>Avoid links with strange or misspelled domains.</li>
-        <li>Hover to preview where the link actually goes.</li>
-        <li>Don't trust links from unknown sources.</li>
-        <li>Shortened links? Use a preview tool before clicking.</li>
+        <li> Avoid links with strange or misspelled domains.</li>
+        <li> Hover to preview where the link actually goes.</li>
+        <li> Don't trust links from unknown sources.</li>
+        <li> Shortened links? Use a preview tool before clicking.</li>
       </ul>
     </div>
   </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
