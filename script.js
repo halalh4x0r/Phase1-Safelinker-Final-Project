@@ -75,3 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderHistory();
     });
+    document.getElementById("loading").style.display = "block"; // Show loading
+
+fetch(your_api_url)
+  .then(response => response.json())
+  .then(data => {
+    document.getElementById("loading").style.display = "none"; 
+  })
+  .catch(error => {
+    document.getElementById("loading").style.display = "none";
+    alert("Something went wrong. Try again.");
+  });
