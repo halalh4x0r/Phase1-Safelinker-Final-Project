@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     document.getElementById("loading").style.display = "block"; // Show loading
 
-fetch(your_api_url)
+fetch('https://phase1-safelinker-final-project.onrender.com/urls')
   .then(response => response.json())
   .then(data => {
     document.getElementById("loading").style.display = "none"; 
