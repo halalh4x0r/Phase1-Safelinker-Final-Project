@@ -75,4 +75,40 @@ body {
         margin-bottom: 0.5rem;
         border-left: 4px solid #00ffaa;
       }
-      
+      /* Spinner */
+.spinner {
+  margin: 10px auto;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #2b6777;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scan result icons */
+#scanOutput {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Safe and Unsafe styles */
+.safe {
+  color: #2ecc71;
+  font-weight: bold;
+}
+
+.unsafe {
+  color: #e74c3c;
+  font-weight: bold;
+}
