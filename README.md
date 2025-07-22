@@ -1,41 +1,40 @@
-# Safelinker
+# SafeLinker 
 
-Safelinker is a web-based utility designed to help users generate, manage, and validate safe links for secure redirection or reference. This is especially useful for projects that involve shortening, masking, or verifying URLs in a secure and user-friendly manner.
+### Author: Moha
 
-## Features
+## Project Description
+SafeLinker is a frontend web app that allows users to securely store, manage, and share important web links in a single-page application. The goal is to provide a clean, fast, and intuitive user experience for link management.
 
-- Input and validate URLs
-- Generate safe links with user-defined identifiers
-- Preview destination before redirection
-- Frontend built with HTML, CSS, and JavaScript
-- Lightweight, fast, and responsive design
+##  Live Site
+[🔗View the deployed app here](https://your-github-username.github.io/safelinker)
 
-## Demo
-
-You can preview the project by cloning this repository and opening `index.html` in your browser.
-
-## Getting Started
-
-### Prerequisites
-
-To run Safelinker locally, you need:
-
-- A modern web browser
-
-### Installation
-
-1. Clone the repository:
-
+## Setup Instructions
+1. Clone the repo:  
    ```bash
-   git clone https://github.com/halalh4x0r/safelinker.git
-   cd safelinker
-Open index.html in your browser or use Live Server in VS Code.
+   git clone https://github.com/your-username/safelinker.git
+   
+2. Open index.html in your browser.
 
-Usage
-Enter a URL into the input field
+3. No backend required — just HTML, CSS, and JavaScript
 
-Click the Generate Link button
+Features
+Add new links with labels
 
-Copy or preview the safe version of the link
+Display saved links
 
-Optionally, validate links before navigating
+Delete links
+
+All data fetched from a public API (or use localStorage if no API yet)
+
+Asynchronous interaction using JavaScript fetch API
+
+## Tech Stack
+HTML
+
+CSS
+
+JavaScript (Vanilla JS)
+
+
+---
+
