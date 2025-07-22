@@ -84,3 +84,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderHistory();
 });
+
+  const scrollItems = document.querySelectorAll('.scroll-item');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  scrollItems.forEach(item => {
+    observer.observe(item);
+  });
