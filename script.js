@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const loading = document.getElementById('loading');
   const scanOutput = document.getElementById('scanOutput');
 
+
   function renderHistory() {
     historyList.innerHTML = '';
     const history = JSON.parse(localStorage.getItem('scanHistory')) || [];
@@ -16,11 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  
   function showResult(url, status, type) {
     resultDiv.className = '';
     resultDiv.classList.add(status);
     resultDiv.textContent = `URL "${url}" is classified as: ${status.toUpperCase()} (${type})`;
   }
+
 
   function saveToHistory(url) {
     const history = JSON.parse(localStorage.getItem('scanHistory')) || [];
@@ -29,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       localStorage.setItem('scanHistory', JSON.stringify(history));
     }
   }
+
 
   async function checkURLAgainstLocalDB(url) {
     try {
@@ -48,13 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  
   scanButton.addEventListener('click', async () => {
     const url = urlInput.value.trim();
     if (!url) return;
 
     loading.style.display = 'block';
     resultDiv.classList.add('hidden');
-    scanOutput.style.display = 'none';
 
     const { status, type } = await checkURLAgainstLocalDB(url);
 
@@ -78,26 +82,45 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === 'Enter') scanButton.click();
   });
 
+  
   document.addEventListener('dblclick', () => {
     document.body.classList.toggle('dark-mode');
   });
 
   renderHistory();
-});
 
-  const scrollItems = document.querySelectorAll('.scroll-item');
-
-  const observer = new IntersectionObserver((entries) => {
+  const scrollObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Animate only once
+        scrollObserver.unobserve(entry.target); 
       }
     });
-  }, {
-    threshold: 0.2
-  });
+  }, { threshold: 0.2 });
 
-  scrollItems.forEach(item => {
-    observer.observe(item);
+  document.querySelectorAll('.scroll-item, .fade-in').forEach(el => {
+    scrollObserver.observe(el);
   });
+});
+document.getElementById("scanButton").addEventListener("click", function () {
+  const loading = document.getElementById("loading");
+  const result = document.getElementById("result");
+
+  loading.style.display = "block";
+  result.style.display = "none";
+  result.classList.remove("safe", "unsafe");
+  setTimeout(() => {
+    loading.style.display = "none";
+    result.style.display = "block";
+
+    const isSafe = Math.random() > 0.5;
+
+    if (isSafe) {
+      result.textContent = "URL is safe ";
+      result.classList.add("safe");
+    } else {
+      result.textContent = "URL is unsafe ";
+      result.classList.add("unsafe");
+    }
+  }, 2000);
+});
