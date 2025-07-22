@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       renderHistory();
     });
-    document.getElementById("loading").style.display = "block"; // Show loading
+    document.getElementById("loading").style.display = "block"; 
 
 fetch('https://phase1-safelinker-final-project.onrender.com/urls')
   .then(response => response.json())
