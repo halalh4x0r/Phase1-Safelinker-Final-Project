@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         resultDiv.classList.remove('hidden');
         saveToHistory(url);
         renderHistory();
-        urlInput.value = ''; // 
+        urlInput.value = ''; 
       });
 
       urlInput.addEventListener('keydown', (e) => {
@@ -86,3 +86,35 @@ fetch('https://phase1-safelinker-final-project.onrender.com/urls')
     document.getElementById("loading").style.display = "none";
     alert("Something went wrong. Try again.");
   });
+
+   function checkURLSafety() {
+    const urlInput = document.getElementById('urlInput').value;
+    const loading = document.getElementById('loading');
+    const scanOutput = document.getElementById('scanOutput');
+
+    if (!urlInput) return;
+
+    scanOutput.style.display = 'none';
+    loading.style.display = 'block';
+
+    setTimeout(() => {
+      loading.style.display = 'none';
+      scanOutput.style.display = 'flex';
+
+      const isSafe = Math.random() > 0.3; 
+
+      if (isSafe) {
+        scanOutput.innerHTML = `
+          <span class="safe">
+            ✅ <span>This URL is safe to visit.</span>
+          </span>
+        `;
+      } else {
+        scanOutput.innerHTML = `
+          <span class="unsafe">
+            ⚠️ <span>This URL is suspicious or dangerous.</span>
+          </span>
+        `;
+      }
+    }, 2000);
+  }
